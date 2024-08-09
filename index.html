@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Video Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#downloadContainer {
+    margin-top: 20px;
+}
+
+#downloadLink {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#downloadLink:hover {
+    background-color: #218838;
+}
+</style></head>
+<body>
+    <div class="container">
+        <h1>Download Telegram Video</h1>
+        <input type="text" id="videoUrl" placeholder="Enter Telegram video URL">
+        <button onclick="generateDownloadLink()">Generate Download Link</button>
+        
+        <div id="downloadContainer" style="display: none;">
+            <a id="downloadLink" href="#" download>Download Video</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">function generateDownloadLink() {
+    const videoUrl = document.getElementById('videoUrl').value;
+    
+    if (videoUrl) {
+        const downloadContainer = document.getElementById('downloadContainer');
+        const downloadLink = document.getElementById('downloadLink');
+        
+        // Set the download link href to the video URL
+        downloadLink.href = videoUrl;
+        
+        // Show the download container
+        downloadContainer.style.display = 'block';
+    } else {
+        alert('Please enter a valid Telegram video URL.');
+    }
+}
+</script></body></html>
